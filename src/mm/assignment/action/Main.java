@@ -1,17 +1,18 @@
 package mm.assignment.action;
 
 import java.text.ParseException;
-import java.util.Map;
 
 import mm.assignment.busineslogic.BusinessLogic;
+import mm.assignment.busineslogic.BusinessLogicImpl;
 import mm.assignment.model.User;
 import mm.assignment.utils.DateUtils;
 
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
+		BusinessLogic businessLogic = new BusinessLogicImpl();
 		
-		BusinessLogic.billGeneration(getDummyData());
+		businessLogic.billGeneration(getDummyData());
 		
 		
 	}

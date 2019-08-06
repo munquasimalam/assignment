@@ -7,6 +7,7 @@ import java.text.ParseException;
 import org.junit.Test;
 
 import mm.assignment.busineslogic.BusinessLogic;
+import mm.assignment.busineslogic.BusinessLogicImpl;
 import mm.assignment.model.User;
 import mm.assignment.utils.DateUtils;
 import static org.junit.Assert.*;
@@ -15,12 +16,10 @@ public class BusinessLogicTest {
 	
     //  create mock
 		//BusinessLogic test  = new BusinessLogic(); 
-		BusinessLogic test =mock(BusinessLogic.class);
+		BusinessLogic mock =mock(BusinessLogicImpl.class);
 	 
 	@Test
 	public void billGenerationTwoYearsOld() throws ParseException  {
-		BusinessLogic mock = org.mockito.Mockito.mock(BusinessLogic.class);
-		
 		User user = new User();
 		user.setEmiratesId(1234567);
 		user.setUserName("Alam");
@@ -47,7 +46,7 @@ public class BusinessLogicTest {
 		
 		user.setGrossAmount(990.00);
 		
-	        when(test.billGeneration(user)).thenReturn(680.4);
+	        when(mock.billGeneration(user)).thenReturn(680.4);
 	      
 	}
 	
@@ -63,7 +62,7 @@ public class BusinessLogicTest {
 		
 		user.setGrossAmount(990.00);
 		
-	        when(test.billGeneration(user)).thenReturn(888.3);
+	        when(mock.billGeneration(user)).thenReturn(888.3);
 	      
 	}
 	
@@ -79,7 +78,7 @@ public class BusinessLogicTest {
 		
 		user.setGrossAmount(990.00);
 		
-	        when(test.billGeneration(user)).thenReturn(992.25);
+	        when(mock.billGeneration(user)).thenReturn(992.25);
 	      
 	}
 
